@@ -11,19 +11,13 @@ class KahvemPage extends StatefulWidget {
 }
 
 class _KahvemPageState extends State<KahvemPage> {
-  final List<String> _imgPath = [
-    'assets/americano.png',
-    'assets/cappuccino.png',
-    'assets/espresso.png',
-    'assets/latte.png',
-    'assets/türk_kahvesi.png',
-  ];
   final List<Kahve> _registerKahve = [
     Kahve(imagePath: 'assets/americano.png', title: 'Americano', fiyat: 10),
     Kahve(imagePath: 'assets/cappuccino.png', title: 'Cappuccino', fiyat: 15),
     Kahve(imagePath: 'assets/espresso.png', title: 'Espresso', fiyat: 20),
     Kahve(imagePath: 'assets/latte.png', title: 'Latte', fiyat: 25),
-    Kahve(imagePath: 'assets/türk_kahvesi.png', title: 'Türk Kahvesi', fiyat: 30),
+    Kahve(
+        imagePath: 'assets/türk_kahvesi.png', title: 'Türk Kahvesi', fiyat: 30),
   ];
 
   void _openAddShowNewModelBottomList() {
@@ -100,12 +94,6 @@ class _KahvemPageState extends State<KahvemPage> {
       appBar: AppBar(
         title: const Text('Kahve Uygulaması'),
         elevation: 0,
-        actions: [
-          IconButton(
-            onPressed: _openAddShowNewModelBottomList,
-            icon: const Icon(Icons.add),
-          ),
-        ],
       ),
       body: Column(
         children: [
@@ -113,6 +101,11 @@ class _KahvemPageState extends State<KahvemPage> {
             child: bodyAlani,
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _openAddShowNewModelBottomList,
+        tooltip: 'New Coffee',
+        child: const Icon(Icons.add),
       ),
     );
   }

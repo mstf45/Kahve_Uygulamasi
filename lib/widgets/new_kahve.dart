@@ -50,16 +50,17 @@ class _NewKahveState extends State<NewKahve> {
     }
     widget.onAddKahve(
       Kahve(
-          title: _titleController.text,
-          fiyat: enteredAmound,
-          imagePath: _imagePathController.text),
+        title: _titleController.text,
+        fiyat: enteredAmound,
+        imagePath: _imagePathController.text,
+      ),
     );
     Navigator.pop(context);
   }
 
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _priceController = TextEditingController();
-  TextEditingController _imagePathController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
+  final TextEditingController _imagePathController = TextEditingController();
 
   @override
   void dispose() {
